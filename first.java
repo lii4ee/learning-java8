@@ -111,4 +111,53 @@ System.out.println("+++++++++++++++++++++++++++++++++++++=");
         .sorted(Map.Entry.<String, Long>comparingByValue())
         .forEach(System.out::println);;
     }   
+/*
+ * OUTPUT for the above
+
+ [Alice 28 2020-05-15 75000.0, Bob 35 2018-03-10 85000.0, Charlie 32 2019-11-22 78000.0, Diana 41 2017-07-30 95000.0, Evan 25 2021-02-05 65000.0]
+Alice 28 2020-05-15 75000.0
+Bob 35 2018-03-10 85000.0
+Charlie 32 2019-11-22 78000.0
+Diana 41 2017-07-30 95000.0
+Evan 25 2021-02-05 65000.0
+[-5, 1, 3, 5, 7, 9, 11, 19]
+Diana 41 2017-07-30 95000.0
+25
+28
+32
+35
+41
+ALICE
+BOB
+CHARLIE
+DIANA
+EVAN
+[Alice 28 2020-05-15 75000.0, Bob 35 2018-03-10 85000.0, Charlie 32 2019-11-22 78000.0, Diana 41 2017-07-30 95000.0, Evan 25 2021-02-05 65000.0]
+++++++++++++=
+Alice
+Bob
+Charlie
+Diana
+Evan
+++++++++++++=
+true
+32.2
+seven
+Evan 25 2021-02-05 65000.0
+Diana 41 2017-07-30 95000.0
+Charlie 32 2019-11-22 78000.0
+Bob 35 2018-03-10 85000.0
+Alice 28 2020-05-15 75000.0
+---------------------------
+Second most frequent word: apple (count: 3)
++++++++++++++++++++++++++++++++++++++=
+{orange=2, banana=3, apple=3, kiwi=1, grape=1}
+kiwi=1
+grape=1
+orange=2
+banana=3
+apple=3
+ */
+
+
 }
