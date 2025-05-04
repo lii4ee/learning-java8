@@ -3,9 +3,9 @@ package myapp;
 import java.time.LocalDate;
 import java.util.*;
 import java.util.function.Function;
-import java.util.function.Predicate;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 
 public class first {
@@ -80,15 +80,35 @@ public class first {
             "apple", "banana", "apple", "orange", "banana", 
             "apple", "grape", "orange", "kiwi", "banana"
         );
+
         Optional<Map.Entry<String, Long>> secondMostFrequent = words.stream()
                 .collect(Collectors.groupingBy(w -> w, Collectors.counting()))
                 .entrySet().stream()
                 .sorted(Map.Entry.<String, Long>comparingByValue().reversed())
                 .skip(1)
-                .findFirst();
-                
+                .findFirst();        
+
         System.out.println("Second most frequent word: " + 
                           secondMostFrequent.map(e -> e.getKey() + " (count: " + e.getValue() + ")")
                           .orElse("None"));
+        
+        String text = "ABCDEJSFDLKSDKLFJSKDLFJDKLS";
+
+        Map<Character, Long> charFrequency = text.chars()
+                .mapToObj(c -> (char)c)
+                .collect(Collectors.groupingBy(
+                                                Function.identity(), 
+                                                LinkedHashMap::new, 
+                                                Collectors.counting()
+                                                ));
+        
+System.out.println("+++++++++++++++++++++++++++++++++++++=");
+        Map <String, Long> mp = words.stream()
+        .collect(Collectors.groupingBy(w -> w ,Collectors.counting()));
+        System.out.println(mp);
+
+        mp.entrySet().stream()
+        .sorted(Map.Entry.<String, Long>comparingByValue())
+        .forEach(System.out::println);;
     }   
 }
